@@ -1,0 +1,16 @@
+<div *ngIf="gridArray" [ngStyle]='gridAndButton' [style.max-width]='(gridArray[0].length*25 + (2*gridArray[0].length)) + "px"'>
+  <div class="rows" *ngFor="let row of gridArray" [ngStyle]="rowsStyle">
+    <div class="cols-flex" [ngStyle]="colContStyles">
+      <div
+        class="cols"
+        [ngStyle]="divStyles"
+        *ngFor="let col of row"
+        (click)="changeValue(col.row, col.col)"
+        [style.background-color]="col.value === 0 ? 'white' : 'black'"
+      ></div>
+    </div>
+  </div>
+
+  <button *ngIf="!clicked" (click)="getGeneration()">Seed</button>
+  <button *ngIf="clicked" (click)="stopGeneration()">Stop</button>
+</div>
