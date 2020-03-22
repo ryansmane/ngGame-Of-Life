@@ -29,7 +29,10 @@ export class ConwaysGrid implements OnInit{
         'flex-direction': 'row'
     }
     buttonStyles = {
-        'min-height': '16px'
+        'min-height': '24px',
+        'background-color': 'white',
+        'border': '1px solid black',
+        'font-family': 'Cinzel, serif'
     }
    @Output() seed: EventEmitter<object> = new EventEmitter;
    @Output() generate: EventEmitter<any> = new EventEmitter;

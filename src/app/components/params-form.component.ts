@@ -11,8 +11,10 @@ export class ParamsForm {
   cols: number;
   errorText: string;
   buttonStyles = {
-        'min-height': '16px',
-        'background-color': 'red'
+        'min-height': '24px',
+        'background-color': 'white',
+        'border': '1px solid black',
+        'font-family': 'Cinzel, serif'
     }
 
   @Output()

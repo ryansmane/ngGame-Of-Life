@@ -1,9 +1,10 @@
 <h1 [style.text-align]="'center'">(Non-Expanding) Conway's Game of Life</h1>
-
+<div class='main-directives'>
 <div class="inputContainer" [ngStyle]='inputContainerStyles'>
   <params-form (dimsSet)='getDims($event)'></params-form>
 </div>
 
 <div class="conways-grid">
   <conways-grid [gridArray] = 'gridArray' (seed)=changeSingleValue($event) (generate)='generate()' (stopGenerate)='stopGenerate()' (resetGrid)='resetGrid()'></conways-grid>
+</div>
 </div>
