@@ -11,8 +11,7 @@ export class ConwaysGrid implements OnInit{
         'display': 'flex',
         'flex-direction': 'column',
         'justify-content': 'space-between',
-        'margin': '0 auto',
-        'padding-top': '32px'
+        'margin': '0 auto'
     }  
     divStyles = {
         'border': '1px solid black',

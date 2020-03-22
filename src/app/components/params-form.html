@@ -1,10 +1,13 @@
+
+<h4>The rules can be found <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>here</a>.</h4>
 <label
   >Rows
-  <input [(ngModel)]="rows" />
+  <input [(ngModel)]="rows" [style.width]="'48px'" />
 </label>
 <label
   >Columns
-  <input [(ngModel)]="cols" />
+  <input [(ngModel)]="cols" [style.width]="'48px'" />
 </label>
-<button (click)="setDims()">Generate Empty Grid</button>
+<button (click)="setDims()" [style.margin-left]="'8px'">Generate Empty Grid</button>
+
 
