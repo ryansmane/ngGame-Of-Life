@@ -1,7 +1,12 @@
-<h3 *ngIf="gridArray" [style.text-align]="'center'">Click cells to bring them to life.</h3>
+<h3 *ngIf="gridArray" [style.text-align]="'center'">
+  Click cells to bring them to life.
+</h3>
 
-<div *ngIf="gridArray" [ngStyle]='gridAndButton' [style.max-width]='(gridArray[0].length*25 + (2*gridArray[0].length)) + "px"'>
-    
+<div
+  *ngIf="gridArray"
+  [ngStyle]="gridAndButton"
+  [style.max-width]='(gridArray[0].length*25 + (2*gridArray[0].length)) + "px"'
+>
   <div class="rows" *ngFor="let row of gridArray" [ngStyle]="rowsStyle">
     <div class="cols-flex" [ngStyle]="colContStyles">
       <div
@@ -13,7 +18,7 @@
       ></div>
     </div>
   </div>
-
-  <button *ngIf="!clicked" (click)="getGeneration()">Start</button>
-  <button *ngIf="clicked" (click)="stopGeneration()">Stop</button>
+  <button [ngStyle]='buttonStyles' *ngIf="!clicked" (click)="getGeneration()">Start</button>
+  <button [ngStyle]='buttonStyles' *ngIf="clicked" (click)="stopGeneration()">Stop</button>
+  <button [ngStyle]='buttonStyles' (click)="reset()">Reset</button>
 </div>

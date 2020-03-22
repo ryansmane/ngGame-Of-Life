@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-
+import { ConwayService } from '../services/conway-service.service'
 
 @Component({
     selector:'conways-grid',
@@ -28,12 +28,17 @@ export class ConwaysGrid implements OnInit{
         'display':'flex',
         'flex-direction': 'row'
     }
+    buttonStyles = {
+        'min-height': '16px'
+    }
    @Output() seed: EventEmitter<object> = new EventEmitter;
    @Output() generate: EventEmitter<any> = new EventEmitter;
    @Output() stopGenerate: EventEmitter<any> = new EventEmitter;
+   @Output() resetGrid: EventEmitter<any> = new EventEmitter;
     clicked = false;
     coordinates: object;
-    constructor() {}
+
+    constructor(private conwayService: ConwayService) {}
 
     ngOnInit() {
         
@@ -51,7 +56,9 @@ export class ConwaysGrid implements OnInit{
         this.clicked = !this.clicked
         this.stopGenerate.emit();
     }
-
+    reset() {
+        this.resetGrid.emit();
+    }
     
     
 }

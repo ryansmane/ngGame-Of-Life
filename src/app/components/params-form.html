@@ -2,12 +2,14 @@
 <h4>The rules can be found <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>here</a>.</h4>
 <label
   >Rows
-  <input [(ngModel)]="rows" [style.width]="'48px'" />
+  <input [(ngModel)]="rows" [style.width]="'48px'" placeholder='10' type='number' />
 </label>
 <label
   >Columns
-  <input [(ngModel)]="cols" [style.width]="'48px'" />
+  <input [(ngModel)]="cols" [style.width]="'48px'" placeholder='15' type='number' />
 </label>
-<button (click)="setDims()" [style.margin-left]="'8px'">Generate Empty Grid</button>
+<button [ngStyle]='buttonStyles' (click)="setDims()" [style.margin-left]="'8px'">Generate Empty Grid</button>
+<p *ngIf='errorText' [style.color]="'red'">{{ errorText }}</p>
+
 
 

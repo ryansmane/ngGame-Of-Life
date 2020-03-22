@@ -15,7 +15,7 @@ export class AppComponent {
   intervalID;
   inputContainerStyles: Object = {
     'text-align': 'center',
-    'padding': '24px 0px',
+    'padding': '16px 0px 8px 0px',
     'border-bottom': '2px solid black'
   }
 
@@ -46,5 +46,8 @@ export class AppComponent {
     clearInterval(this.intervalID)
   }
 
+  resetGrid() {
+    this.gridArray = this.conwayMethods.resetGrid(this.gridArray);
+  }
 
 }

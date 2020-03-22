@@ -4,18 +4,14 @@ import { Injectable } from "@angular/core";
   providedIn: "root"
 })
 export class ConwayService {
-
   generate(arr, rows, cols) {
-    
     let copy = arr.slice();
-    const padding = [...Array(cols)].fill({value: 0})
-    
-    // padding
-    // copy.unshift(padding);
-    // copy.push(padding);
-    
-    let staticGrid = copy.map(x => x.map(y => {return {...y, value: 0} }));
-    
+    let staticGrid = copy.map(x =>
+      x.map(y => {
+        return { ...y, value: 0 };
+      })
+    );
+
     for (let i = 1; i < rows - 1; i++) {
       for (let k = 0; k < cols; k++) {
         if (copy[i][k].value === 1) {
@@ -33,9 +29,6 @@ export class ConwayService {
       }
     }
 
-    // staticGrid.pop();
-    // staticGrid.shift();
-
     return staticGrid;
   }
 
@@ -50,5 +43,10 @@ export class ConwayService {
     sum += arr[i - 1][j + 1] ? arr[i - 1][j + 1].value : 0;
     sum += arr[i + 1][j - 1] ? arr[i + 1][j - 1].value : 0;
     return sum;
+  }
+
+  resetGrid(arr) {
+    
+    return arr.map(x => x.map(y => { return {...y, value: 0}}));
   }
 }
